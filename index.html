@@ -431,7 +431,7 @@ function SudokuGame({ onBack }) {
         <div style={{fontSize:64,marginBottom:8}}>🧩</div>
         <div className="big-title">Mini Sudoku</div>
         <p className="sub-text" style={{marginBottom:40}}>Train your brain with numbers</p>
-        {[["easy","Easy","🟢","35 cells removed"],["medium","Medium","🟡","45 cells removed"],["hard","Hard","🔴","55 cells removed"]].map(([k,l,e,d])=>(
+        {[["easy","Easy","😉","35 cells removed"],["medium","Medium","🥵","45 cells removed"],["hard","Hard","🥶","55 cells removed"]].map(([k,l,e,d])=>(
           <button key={k} className="diff-card" onClick={()=>startGame(k)}>
             <span style={{fontSize:24}}>{e}</span>
             <div><div>{l}</div><div className="diff-sub">{d}</div></div>
@@ -500,7 +500,7 @@ function SudokuGame({ onBack }) {
 // MEMORY GAME & 2048
 // ══════════════════════════════════════
 function MemoryGame({ onBack }) {
-  const emojis = ["🐶","🐱","🦊","🐻","🐼","🐨","🦁","🐸"];
+  const emojis = ["🥑","🍓","🍒","🥦","🍋","🥕","🥝","🫐"];
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState(new Set());
@@ -622,7 +622,7 @@ function Game2048({ onBack }) {
     touchRef.current=null;
   };
 
-  const colors={0:"#E5E5EA",2:"#F2F2F7",4:"#E5E5EA",8:"#F5B041",16:"#EB984E",32:"#E74C3C",64:"#E67E22",128:"#F1C40F",256:"#F1C40F",512:"#F1C40F",1024:"#2ECC71",2048:"#3498DB"};
+  const colors={0:"#E5E5EA",2:"EFF9E8",4:"F5E2B0",8:"85A898",16:"DFCD80",32:"CF828A",64:"FC947D",128:"9EF3F8",256:"DAEF7A",512:"#F1C40F",1024:"FA6CA2",2048:"8ACF5D"};
 
   return (
     <div className="game-screen" onTouchStart={onTS} onTouchEnd={onTE}>
@@ -657,7 +657,7 @@ function Game2048({ onBack }) {
 const games = [
   { id:"zip",    name:"Zip",         tagline:"Connect the numbers",           icon:"⚡", color:"#34C759", Comp:ZipGame, featured:true },
   { id:"sudoku", name:"Mini Sudoku", tagline:"Train your brain with numbers", icon:"🧩", color:"#007AFF", Comp:SudokuGame },
-  { id:"memory", name:"Memory Match", tagline:"Flip, match, remember",        icon:"🃏", color:"#5856D6", Comp:MemoryGame },
+  { id:"memory", name:"Memory Match", tagline:"Flip, match, remember",        icon:"🧠", color:"#5856D6", Comp:MemoryGame },
   { id:"2048",   name:"2048",        tagline:"Slide to merge tiles",          icon:"🔢", color:"#FF9500", Comp:Game2048 },
 ];
 
@@ -688,8 +688,8 @@ function App() {
 
       {/* Tabs */}
       <div className="tabs">
-        <div className="tab"><span style={{color:"#FF3B30",fontSize:12}}>▶</span> Play</div>
-        <div className="tab"><span style={{color:"#FF9500",fontSize:14}}>👾</span> Vibe Coded</div>
+        <div className="tab"><span style={{color:"#FF3B30",fontSize:12}}>🕹️</span> Play</div>
+        <div className="tab"><span style={{color:"#FF9500",fontSize:14}}>🤖</span> Vibe Coded</div>
       </div>
 
       {/* Featured */}
