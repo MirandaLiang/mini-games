@@ -22,7 +22,6 @@
   
   .presentation-container {
     position: relative;
-    /* Adjust these outer bounds if your PNG is slightly different in overall size */
     width: 430px;  
     height: 880px; 
     display: flex;
@@ -44,7 +43,6 @@
   /* ── The Actual "Screen" ── */
   #app {
     position: absolute;
-    /* These dimensions fit snug inside standard iPhone Pro mockups */
     width: 394px;  
     height: 852px; 
     border-radius: 46px; /* Matches the inner hardware curve of your image */
@@ -59,8 +57,8 @@
   .hub { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; padding-bottom: 100px; background: #fff; }
   .hub::-webkit-scrollbar { display: none; } 
   
-  /* Pushed down to clear your image's Dynamic Island */
-  .status-bar { display: flex; justify-content: space-between; align-items: center; padding: 22px 32px 0; font-size: 15px; font-weight: 600; color: #1C1C1E; }
+  /* Pushed down to safely clear your image's Dynamic Island */
+  .status-bar { display: flex; justify-content: space-between; align-items: center; padding: 54px 32px 0; font-size: 15px; font-weight: 600; color: #1C1C1E; }
   .hub-title { font-size: 34px; font-weight: 800; padding: 16px 28px 12px; animation: fadeUp 0.5s ease both; }
   .tabs { display: flex; gap: 8px; padding: 0 28px 20px; animation: fadeUp 0.5s ease 0.05s both; }
   .tab { background: #F2F2F7; border-radius: 20px; padding: 8px 16px; display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; border: 1px solid #E5E5EA; color: #3A3A3C; }
@@ -70,8 +68,10 @@
   .featured-label { font-size: 11px; font-weight: 700; color: #007AFF; letter-spacing: 1px; text-transform: uppercase; padding: 16px 20px 0;}
   .featured-name { font-size: 22px; font-weight: 700; margin: 4px 20px 2px; }
   .featured-tag { font-size: 15px; color: #8E8E93; margin: 0 20px;}
-  .featured-hero { margin: 16px 20px 20px; background: linear-gradient(135deg, #A2C2E1, #D1E9FF); border-radius: 12px; height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .featured-emoji { font-size: 80px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1)); position: relative; z-index: 1; }
+  
+  /* Shorter featured card so it doesn't take up the whole screen */
+  .featured-hero { margin: 16px 20px 20px; background: linear-gradient(135deg, #A2C2E1, #D1E9FF); border-radius: 12px; height: 130px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .featured-emoji { font-size: 64px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1)); position: relative; z-index: 1; }
 
   .section-title { font-size: 22px; font-weight: 700; padding: 0 28px; }
   .section-sub { font-size: 15px; color: #8E8E93; padding: 2px 28px 12px; }
@@ -96,7 +96,8 @@
   .game-screen { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; background: #F8F8F8; padding-bottom: 60px; }
   .game-screen::-webkit-scrollbar { display: none; }
   
-  .game-header { padding: 24px 28px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: rgba(248,248,248,0.9); backdrop-filter: blur(10px); z-index: 50; }
+  /* Adjusted game header padding to match the hub status bar */
+  .game-header { padding: 54px 28px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: rgba(248,248,248,0.9); backdrop-filter: blur(10px); z-index: 50; }
   .back-btn { background: none; border: none; color: #007AFF; font-size: 17px; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px; }
   .back-arrow { display: inline-block; margin-right: 2px; }
 
@@ -438,7 +439,7 @@ function SudokuGame({ onBack }) {
       <div className="game-header">
         <button className="back-btn" onClick={onBack}><span className="back-arrow">‹</span> Games</button>
       </div>
-      <div style={{padding:"0 32px", textAlign:"center"}}>
+      <div style={{padding:"0 28px", textAlign:"center"}}>
         <div style={{fontSize:64,marginBottom:8}}>🧩</div>
         <div className="big-title">Mini Sudoku</div>
         <p className="sub-text" style={{marginBottom:40}}>Train your brain with numbers</p>
